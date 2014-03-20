@@ -43,6 +43,8 @@ gem 'jquery-rails', '3.0.4'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 
+gem 'pg'
+
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
@@ -53,7 +55,6 @@ end
 
 group :production do
 	gem 'rails_12factor'
-	gem 'pg'
 end
 
 group :development do
