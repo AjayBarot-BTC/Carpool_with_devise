@@ -1,0 +1,34 @@
+<% provide(:title, @user.name) %>
+<div class="row">
+  <aside class="span5">
+    <section>
+      <h1>
+        <%= image_tag @user.image_url(:thumb).to_s %>
+        <%= @user.name %>
+        <%= @user.phone_no %>
+      </h1>
+    </section>
+    <section>
+    	<%= render 'shared/stats' %> <br>
+      <%= render 'follow_form' if user_signed_in? %>
+    </section>
+  </aside>
+<div class="span7">
+<% unless (@user) %><br><br><br><br><br>
+      <bold>Send a Message:</bold><br>
+      <%= form_for(@user) do |f| %>
+      <%= f.text_area :message, placeholder: " Post Message" %><br>
+      <%= f.submit :post , class: "btn btn-danger" %>
+      <br><br>
+      <bold>OR </bold><br><br>
+      <bold>
+      </bold>
+      <%= f.text_area :email %><br>
+      <%= f.submit :post , class: "btn btn-danger" %>
+<% end %>
+<% end %>
+</div>
+<% if @user.requests.any? %>
+<h3>Posts (<%= @user.requests.count %>)</h3>
+<% end %>
+</div>
