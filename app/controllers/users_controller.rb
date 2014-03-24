@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
 	before_action :set_user, only: [:show, :edit, :update, :destroy]
-
   def following
     @title = "Following"
     @user = User.find(params[:id])

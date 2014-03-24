@@ -1,5 +1,6 @@
 Authdemo::Application.routes.draw do
   root 'homes#index'
+  devise_for :admins
   devise_for :users
   devise_scope :user do  
     get "/signin" => "devise/sessions#new"
@@ -14,6 +15,7 @@ Authdemo::Application.routes.draw do
   resources :requests, only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]
   resources :users
+  resources :admins
   #devise_for :models
   #resources :dashboards
   #resources :users

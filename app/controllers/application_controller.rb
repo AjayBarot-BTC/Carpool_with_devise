@@ -15,5 +15,6 @@ class ApplicationController < ActionController::Base
      devise_parameter_sanitizer.for(:sign_up) << :year_of_birth
      devise_parameter_sanitizer.for(:sign_up) << :profession
      devise_parameter_sanitizer.for(:sign_up) << :name
+     #devise_parameter_sanitizer.for(:admins) << :name
     end	
 end
