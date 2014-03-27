@@ -15,9 +15,9 @@ class UsersController < ApplicationController
   end
   
   def index
-		@users = User.all 
-    @users = User.find(:all, :conditions => ['city LIKE ?', "%#{params[:search]}%"])
-	end
+		@users = User.all
+    #@users = User.search(params[:search]) 
+  end
 
 	def show
 		@user = User.find(params[:id])	

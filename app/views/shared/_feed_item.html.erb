@@ -1,4 +1,4 @@
-<li id="<%= feed_item.id %>">
+ <li id="<%= feed_item.id %>">
  <%= image_tag current_user.image_url(:thumb).to_s %>
  <span class="user">
   <%= link_to feed_item.user.name, feed_item.user %>
@@ -6,6 +6,10 @@
   <span class="content">
   <b>Comment:</b>
   <%= feed_item.content %>
+  </span>
+  <span class="destination">
+  <b>Destination:</b>
+  <%= feed_item.destination %>
   </span>
   <span class="timestamp">
   Posted <%= time_ago_in_words(feed_item.created_at) %> ago.

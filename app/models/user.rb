@@ -12,6 +12,8 @@ validates :email, presence: true, uniqueness: { case_sensitive: false }
 #for follwer and following
 has_many :requests, dependent: :destroy
 
+has_many :destination
+
 has_many :relationships, foreign_key: "follower_id", dependent: :destroy
 
 has_many :followed_users, through: :relationships, source: :followed

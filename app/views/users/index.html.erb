@@ -1,7 +1,11 @@
  <% if current_user != (@user) %>
  <ol class="microposts">
   <% @users.each do |user| %>  
-    <%= render user %>
- <% end %>
+ <%= render user %>
  </ol>
+ <% end %>
+ <% end %>
+<%= form_tag(controller: "requests", method: "get") do %>
+ <%= text_field_tag :search, params[:search] %>
+ <%= submit_tag("search", name: "nil") %>
  <% end %>

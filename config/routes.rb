@@ -11,8 +11,7 @@ Authdemo::Application.routes.draw do
       get :following, :followers
     end
     end
-
-  resources :requests, only: [:create, :destroy]
+  resources :requests
   resources :relationships, only: [:create, :destroy]
   resources :users
   resources :admins
