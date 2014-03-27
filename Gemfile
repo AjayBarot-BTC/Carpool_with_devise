@@ -7,11 +7,15 @@ gem 'rails', '4.0.2'
 
 gem 'devise'
 
+gem 'twitter-bootstrap-rails'
+
 gem 'rmagick'
 
 #gem 'activeadmin', github: 'gregbell/active_admin'
 
 gem 'carrierwave'
+
+gem 'rails3-jquery-autocomplete'
 
 #gem 'zeus'
 

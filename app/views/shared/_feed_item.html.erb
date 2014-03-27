@@ -7,11 +7,6 @@
   <b>Comment:</b>
   <%= feed_item.content %>
   </span>
-  <span class="destination">
-  <b>Destination:
-  </b>
-  <%= feed_item.destination %>
-  </span>
   <span class="timestamp">
   Posted <%= time_ago_in_words(feed_item.created_at) %> ago.
   <% if current_user == feed_item.user %>

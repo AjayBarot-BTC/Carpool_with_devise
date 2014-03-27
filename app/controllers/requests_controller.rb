@@ -1,4 +1,5 @@
 class RequestsController < ApplicationController
+	
 	before_action :correct_user, only: :destroy
 	def create
 		@request = current_user.requests.build(request_params)
