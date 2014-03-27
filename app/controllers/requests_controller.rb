@@ -3,7 +3,7 @@ class RequestsController < ApplicationController
 	before_action :correct_user, only: :destroy
 
 	def index
-		@requests = Request.search(request_params[:search])
+		@requests = Request.search(params[:search])
 	end
 
 	def create
@@ -30,7 +30,7 @@ class RequestsController < ApplicationController
 	private 
 
 	def request_params
-		params.require(:request).permit(:content, :destination, :search)
+		params.require(:request).permit(:content, :destination, :source)
 	end
 
 	def correct_user

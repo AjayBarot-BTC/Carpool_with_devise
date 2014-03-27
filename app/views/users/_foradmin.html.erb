@@ -2,5 +2,6 @@
   <% @users.each do |user| %>  
     <%= render user %>
     <%= link_to "delete", user, method: :delete, data: { confirm: "you sure?" } %>
+ <%= will_paginate @users %>
  <% end %>
  </ol>

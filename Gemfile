@@ -7,6 +7,8 @@ gem 'rails', '4.0.2'
 
 gem 'devise'
 
+gem 'kaminari'
+
 gem 'twitter-bootstrap-rails'
 
 gem 'rmagick'
