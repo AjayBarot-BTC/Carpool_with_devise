@@ -27,18 +27,14 @@
     <div id='container'>
       <div id='instructions'>
         <h1>Enter your Destination</h1>
-      </div>
-      <div class="field", align="left">
-        <div id='input'>
-           <%= f.text_field :destination, id: "gmaps-input-address", placeholder: "Start typing a place name ...", type: "text" %> 
+      </div>    
+           <%= f.text_field :destination, placeholder: "Start typing a place name ...", type: "text" %> 
           <br/>
           <br/>
           <div id='gmaps-error'>
           </div>
-        </div>
         <div id='gmaps-canvas'>
-        </div>
-      </div><br> 
-      <%= f.text_area :content, placeholder: "Comment." %> <br><br>
+        </div><br> 
+      <%= f.text_area :content, placeholder: "Comment.", align: "center" %> <br><br>
       <%= f.submit "Post", class: "btn btn-large btn-primary" %>
  <% end %>

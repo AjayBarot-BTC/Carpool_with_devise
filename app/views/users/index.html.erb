@@ -5,8 +5,8 @@
  <% if current_user != (@user) %>
  <ol class="microposts">
   <% @users.each do |user| %>  
- <%= paginate @users %>
  <%= render user %>
  <% end %>
+ <%= will_paginate @users %>
  </ol>
  <% end %>

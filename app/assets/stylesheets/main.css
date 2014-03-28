@@ -23,16 +23,16 @@ hgroup, nav, section {
 body {
   color: #333;
   margin: 50px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size:13px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size:16px;
 }
 
 #gmaps-canvas {
-  height: 150px;
+  height: 200px;
 
-  border: 1px solid #999;
-  -moz-box-shadow:    0px 0px 5px #ccc;
-  -webkit-box-shadow: 0px 0px 5px #ccc;
-  box-shadow:         0px 0px 5px #ccc;
+  border: 1px solid #100;
+  -moz-box-shadow:    0px 0px 1px #ccc;
+  -webkit-box-shadow: 0px 0px 1px #ccc;
+  box-shadow:         0px 0px 1px #ccc;
 }
 
 #gmaps-error {
@@ -57,9 +57,9 @@ hr {
 }
 
 #container {
-  width: 80%;
-  margin-top: 30px;
-  padding: 25px;
+  width: 90%;
+  margin-top: 10px;
+  padding: 20px;
   border: 1px solid #999;
   -moz-box-shadow:    0px 0px 15px #ccc;
   -webkit-box-shadow: 0px 0px 15px #ccc;
