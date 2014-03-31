@@ -1,61 +1,59 @@
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
-
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
   <%= devise_error_messages! %>
+  <form role="form">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email:</label><br>
+      <%= f.email_field :email, :autofocus => true, class: "form-control", placeholder: "Enter email", id: "exampleInputEmail1" %>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password:</label><br><br>
+      </label>
+      <%= f.password_field :password, :autocomplete => "off", class: "form-control", placeholder: "Password", id: "exampleInputPassword1"%>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password_Confirmation:</label><br><br>
+      </label>
+      <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Password Confirmation", id: "exampleInputPassword1"%>
+    </div>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %>
-  </div>
-  
-  <div>
-  <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-  <%= f.password_field :password, :autocomplete => "off" %>
-  </div>
+    <div class="form-group">
+    <label for="exampleInputPassword1">Current_Password:</label><i>(we need your current password to confirm your changes)</i><br><br>
+      <%= f.password_field :current_password, class: "form-control", placeholder: "Current_Password", id: "exampleInputPassword1" %>
+    </div>
 
-  <div>
-  <%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %>
-  </div>
+    <div class="form-group">
+    <label for="exampleInputImage1">Profile_Image:</label><br>
+      <%= f.file_field :image, class: "form-control", placeholder: "Profile_Image", id: "exampleInputImage1" %>
+    </div>
 
-  <div>
-  <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-  <%= f.password_field :current_password %>
-  </div>
+    <div class="form-group">
+    <label for="exampleInputGender1">Gender:</label><br>
+      <%= f.text_field :gender, class: "form-control", placeholder: "Gender", id: "exampleInputGender1" %>
+    </div>
+    <div class="form-group">
+    <label for="exampleInputcity1">City:</label><br>
+      <%= f.text_field :city, class: "form-control", placeholder: "City", id: "exampleInputcity1" %>
+    </div>
 
-  <div><%= f.label :Profile_Image %>
-  <%= f.file_field :image %>
-  </div>
+    <div class="form-group">
+    <label for="exampleInputDOB1">Date_of_Birth:</label><br>
+      <%= f.text_field :year_of_birth, class: "form-control", placeholder: "Date_of_Birth", id: "exampleInputDOB1" %>
+    </div>
 
-  <div>
-  <%= f.label :Gender %>
-  <%= f.text_field :gender %>
-  </div>
+    <div class="form-group">
+    <label for="exampleInputProfession1">Profession:</label><br>
+      <%= f.text_field :profession, class: "form-control", placeholder: "Profession", id: "exampleInputProfession1" %>
+    </div>
 
-  <div>
-  <%= f.label :City %>
-  <%= f.text_field :city %>
-  </div>
-
-  <div>
-  <%= f.label :Year_of_Birth %>
-  <%= f.text_field :year_of_birth %>
-  </div>
-  
-  <div>
-  <%= f.label :Profession %>
-  <%= f.text_field :profession %>
-  </div>
-
-  <div> 
-  <%= f.label :Phone_no %>
-  <%= f.text_field :phone_no %>
-  </div>
-
-  <div><%= f.submit "Update" %></div>
+    <div class="form-group">
+    <label for="exampleInputPhone_no1">Phone_no:</label><br>
+      <%= f.text_field :phone_no, class: "form-control", placeholder: "Phone_no", id: "exampleInputPhone_no1" %>
+    </div><br>
+      <%= f.submit "Update", class: "btn btn-large btn-primary" %>
 <% end %>
-
-<h3>Cancel my account</h3>
-
-<p><%= button_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete %></p>
-
+</form>
+<br>
+<h3>Cancel my account</h3><br>
+<%= button_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure? This will remove the post and it is non-reversible!!. " }, :method => :delete, class: "btn btn-large btn-primary" %><br>
 <%= link_to "Back", :back %>

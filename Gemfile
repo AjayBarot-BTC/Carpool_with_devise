@@ -7,6 +7,10 @@ gem 'rails', '4.0.2'
 
 gem 'devise'
 
+gem 'ransack'
+
+gem 'bootstrap-datepicker-rails', :git => 'git://github.com/Nerian/bootstrap-datepicker-rails.git'
+
 #gem 'kaminari'
 
 gem 'twitter-bootstrap-rails'
@@ -17,7 +21,7 @@ gem 'rmagick'
 
 gem 'carrierwave'
 
-gem 'rails3-jquery-autocomplete'
+#gem 'rails3-jquery-autocomplete'
 
 #gem 'zeus'
 

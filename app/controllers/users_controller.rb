@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   def followers
     @title = "Followers"
     @user = User.find(params[:id])
-    @users = @user.followers.paginate(page: params[:page])
+    @users = @user.followers.paginate(page: params[:page], :per_page => 5)
     render 'show_follow'
   end
   
@@ -21,7 +21,7 @@ class UsersController < ApplicationController
 
 	def show
 		@user = User.find(params[:id])	
-    @requests = @user.requests.paginate(page: params[:page])
+    @requests = @user.requests.paginate(page: params[:page], :per_page => 5)
 	end
 
   	def new
@@ -67,6 +67,6 @@ class UsersController < ApplicationController
     end
 
     def user_params
-      params.require(:user).permit(:name, :email, :phone_no, :image, :gender, :city, :year_of_birth, :profession)
+      params.require(:user).permit(:name, :phone_no, :image, :gender, :city, :year_of_birth, :profession)
     end
 end

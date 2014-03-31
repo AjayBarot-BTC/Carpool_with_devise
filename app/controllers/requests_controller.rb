@@ -3,7 +3,7 @@ class RequestsController < ApplicationController
 	before_action :correct_user, only: :destroy
 
 	def index
-		@requests = Request.search(params[:search])
+		requests = Request.all
 	end
 
 	def create
