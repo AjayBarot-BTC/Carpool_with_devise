@@ -1,7 +1,7 @@
  <!DOCTYPE html>
 <head>
   <meta charset='utf-8'>
-  <title>Google Maps </title>      
+  <title>Google Maps </title>     
   <link type="text/css" href="stylesheets/main.css" rel="stylesheet" />
   <link type="text/css" href="stylesheets/jquery-ui-1.8.16.custom.css" rel="stylesheet" />
 
@@ -27,13 +27,15 @@
     <div id='container'>
       <div id='instructions'>
         <h1>Enter your Destination</h1>
-      </div>    
-           <%= f.text_field :destination, placeholder: "Start typing a place name ...", type: "text" %> 
+          <%= f.text_field :destination, placeholder: "Start typing a place name ...", type: "text", id: "gmaps-input-address" %> 
           <br/>
-          <div id='gmaps-error'>
+            <div id='gmaps-error'>
+            </div>
+              <div id='gmaps-canvas'>
+              </div><br>
+    </div> 
+              <%= f.text_area :content, placeholder: "Comment.", align: "center" %> <br><br>
+              <%= f.submit "Post", class: "btn btn-large btn-primary" %>
+          <% end %>
           </div>
-        <div id='gmaps-canvas'>
-        </div><br> 
-      <%= f.text_area :content, placeholder: "Comment.", align: "center" %> <br><br>
-      <%= f.submit "Post", class: "btn btn-large btn-primary" %>
- <% end %>
+  </body>

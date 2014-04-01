@@ -4,7 +4,7 @@ html {
   border:0;
 }
 
-body, div, object, iframe,
+body, div, span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, code,
 del, dfn, em, img, q, dl, dt, dd, ol, ul, li,
@@ -57,9 +57,11 @@ hr {
 }
 
 #container {
-  width: 81%;
+  width: 81.5%;
+  margin-left:  auto;
+  margin-right:  auto;
   margin-top: 10px;
-  padding: 15px;
+  padding: 35px;
   border: 1px solid #999;
   -moz-box-shadow:    0px 0px 5px #ccc;
   -webkit-box-shadow: 0px 0px 5px #ccc;

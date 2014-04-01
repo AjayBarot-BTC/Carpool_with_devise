@@ -9,14 +9,6 @@ class Request < ActiveRecord::Base
 	#	self.user = User.find_or_create_by_destination(destination) unless destination.blank?				
 	#end
 
-	def search(search)
-  		if search
-      		find(:all, :conditions => ['destination LIKE ?', "%#{search}%"])
-  		else
-      		find(:all) 
-  		end
-	end
-
 	default_scope -> { order('created_at DESC') }
 	validates :content, presence: true, length: { maximum: 140 }
 	validates :user_id, presence: true

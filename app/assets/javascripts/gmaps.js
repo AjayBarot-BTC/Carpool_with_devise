@@ -6,7 +6,7 @@ var marker;
 function gmaps_init(){
 
   // center of the universe
-  var latlng = new google.maps.LatLng(23.2248196,72.64637689999999);
+  var latlng = new google.maps.LatLng(51.751724,-1.255284);
 
   var options = {
     zoom: 2,
@@ -117,7 +117,7 @@ function autocomplete_init() {
       // the geocode method takes an address or LatLng to search for
       // and a callback function which should process the results into
       // a format accepted by jqueryUI autocomplete
-      geocoder.geocode( { 'address': request.term }, function(results, status) {
+      geocoder.geocode( {'address': request.term }, function(results, status) {
         response($.map(results, function(item) {
           return {
             label: item.formatted_address, // appears in dropdown box

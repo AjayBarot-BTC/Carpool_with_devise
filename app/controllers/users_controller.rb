@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
 	before_action :set_user, only: [:show, :edit, :update, :destroy]
   def following
     @title = "Following"
@@ -15,8 +16,18 @@ class UsersController < ApplicationController
   end
   
   def index
-		@users = User.paginate(:page => params[:page], :per_page => 5)
-    #@users = User.all(params[:search]) 
+    #@users = User.all
+    #@users = User.paginate(:page => params[:page], :per_page => 5
+    if params[:search]
+     # @users = User.paginate(:page => params[:page], :per_page => 5)
+      @users = User.find(:all, :conditions => ['name LIKE ?', "%#{params[:search]}%"])
+      @users = User.paginate(:page => params[:page], :per_page => 5, :conditions => ['name LIKE ?', "%#{params[:search]}%"])
+    else
+      @users = User.find(:all)
+      @users = User.paginate(:page => params[:page], :per_page => 5, :conditions => ['name LIKE ?', "%#{params[:search]}%"])      
+    end
+
+    #@users = User.paginate(:page => params[:page], :per_page => 5)
   end
 
 	def show
