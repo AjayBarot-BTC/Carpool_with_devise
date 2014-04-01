@@ -21,11 +21,22 @@ class UsersController < ApplicationController
     if params[:search]
      # @users = User.paginate(:page => params[:page], :per_page => 5)
       @users = User.find(:all, :conditions => ['name LIKE ?', "%#{params[:search]}%"])
+      #@requests = @users.find(:all, :conditions => ['source LIKE ?', "%#{params[:search2]}%"])   
       @users = User.paginate(:page => params[:page], :per_page => 5, :conditions => ['name LIKE ?', "%#{params[:search]}%"])
     else
       @users = User.find(:all)
+      # @requests = @users.find(:all)  
       @users = User.paginate(:page => params[:page], :per_page => 5, :conditions => ['name LIKE ?', "%#{params[:search]}%"])      
     end
+
+   # if params[:search2]
+
+    #  @requests = @users.find(:all, :conditions => ['source LIKE ?', "%#{params[:search2]}%"])   
+     # @requests = @users.paginate(:page => params[:page], :per_page => 5, :conditions => ['source LIKE ?', "%#{params[:search2]}%"])
+    #else
+    #  @requests = @users.find(:all)  
+    #  @requests = @users.paginate(:page => params[:page], :per_page => 5, :conditions => ['source LIKE ?', "%#{params[:search2]}%"])
+    #end
 
     #@users = User.paginate(:page => params[:page], :per_page => 5)
   end
@@ -45,7 +56,7 @@ class UsersController < ApplicationController
 
   	def create
     	@user = User.new(user_params)
-    	#UserMailer.registration_confirmation(@user).deliver
+    	UserMailer.registration_confirmation(@user).deliver
           if @user.save
           sign_in @user
           flash[:success] = "Welcome to the Fuelsaver!" 
@@ -55,7 +66,6 @@ class UsersController < ApplicationController
           end
   	end    
   	def update
-    	#UserMailer.registration_confirmation(@user).deliver
         @user = User.find(params[:id])
         if @user.update_attributes(user_params)
           flash[:success] = "Profile updated"

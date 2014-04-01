@@ -4,7 +4,7 @@
  			<%= text_field_tag "search", params[:search] %><br>
  			<%= submit_tag "Search", name: "nil", class: "btn btn-danger" %><br>
  		<% end %><br>
- 			<% @users.each do |user| %>     
+ 	 		<% @users.each do |user| %>     
  			<%= render user %>
  			<% end %>
  		</ol>

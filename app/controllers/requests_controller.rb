@@ -30,7 +30,7 @@ class RequestsController < ApplicationController
 	private 
 
 	def request_params
-		params.require(:request).permit(:content, :destination, :source)
+		params.require(:request).permit(:content, :destination, :source, :time, :date)
 	end
 
 	def correct_user

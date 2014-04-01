@@ -1,9 +1,13 @@
 <li>
-<span class="content"><b>Comment:</b><%= request.content %>
+<span class="destination"><b>Source:</b>
+<%= request.source %>
 </span>
 <span class="destination"><b>Destination:
   </b><%= request.destination %>
 </span>
+<span class="content"><b>Comment:</b><%= request.content %>
+</span>
+
 <span class="timestamp">
 	Posted <%= time_ago_in_words(request.created_at) %> ago.
 </span>

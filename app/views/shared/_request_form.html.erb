@@ -26,15 +26,23 @@
       <%= render 'shared/error_messages', object: f.object %>
     <div id='container'>
       <div id='instructions'>
-        <h1>Enter your Destination</h1>
-          <%= f.text_field :destination, placeholder: "Start typing a place name ...", type: "text", id: "gmaps-input-address" %> 
+        <h1>Enter Location</h1>
+          <%= f.text_field :destination, placeholder: "Start typing a destination place  ...", type: "text", id: "gmaps-input-address" %>
+          <%= f.text_field :source, placeholder: "Start typing a source place...", type: "text", id: "gmaps-input-address" %> 
           <br/>
             <div id='gmaps-error'>
             </div>
               <div id='gmaps-canvas'>
               </div><br>
     </div> 
-              <%= f.text_area :content, placeholder: "Comment.", align: "center" %> <br><br>
+              <%= f.text_field :date, 'data-behaviour' => 'datepicker', placeholder: "Enter Date" %>
+                <script type="text/javascript">
+                $(document).ready(function(){
+                $('[data-behaviour~=datepicker]').datepicker();
+                })
+                </script>
+              <%= f.text_field :time, placeholder: "Time" %>
+              <%= f.text_area :content, placeholder: "Comment", align: "center" %> <br>
               <%= f.submit "Post", class: "btn btn-large btn-primary" %>
           <% end %>
           </div>
