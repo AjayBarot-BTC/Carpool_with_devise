@@ -12,7 +12,8 @@
 #
 # To use a different locale, set it with `I18n.locale`:
 #
-#     I18n.locale = :es
+    #I18n.locale = :false
+    #I18n.enforce_available_locales = false
 #
 # This would use the information in config/locales/es.yml.
 #

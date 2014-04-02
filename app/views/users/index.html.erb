@@ -1,11 +1,11 @@
 <% if current_user != (@user) %>
  		<ol class="microposts">
  		<%= form_tag(:users, method: "get") do %>
- 			<%= text_field_tag "search", params[:search] %><br>
- 			<%= submit_tag "Search", name: "nil", class: "btn btn-danger" %><br>
- 		<% end %><br>
- 	 		<% @users.each do |user| %>     
- 			<%= render user %>
+ 			<%= text_field_tag "search", params[:search], placeholder: "Search by Name" %><br>
+ 			<%= submit_tag "Search", name: nil, class: "btn btn-danger" %><br><br>
+ 			<% end %><br>
+ 	 		<% @users.each do |user| %> 
+ 				<%= render user %>
  			<% end %>
  		</ol>
  		<%= will_paginate @users %>	

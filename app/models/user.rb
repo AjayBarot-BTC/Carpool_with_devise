@@ -12,7 +12,7 @@ validates :email, presence: true, uniqueness: { case_sensitive: false }
 #for follwer and following
 has_many :requests, dependent: :destroy
 
-has_many :destination
+#has_many :destination
 
 has_many :relationships, foreign_key: "follower_id", dependent: :destroy
 
@@ -26,8 +26,37 @@ validates :password, length: { minimum: 6 }
 
 def self.from_users_followed_by(user)
     followed_user_ids = user.followed_user_ids
-    where("user_id IN (:followed_user_ids) OR user_id = :user_id",
-          followed_user_ids: followed_user_ids, user_id: user)
+    where("user_id IN (:followed_user_ids) OR user_id = :user_id", followed_user_ids: followed_user_ids, user_id: user)
+end
+
+def self.search(keywords)
+
+  users = order(:name)
+  users = users.where("name LIKE ?", "%#{keywords}%") if keywords.present?
+  #users = users.where("destination LIKE ?", "%#{keywords}%") if keywords.present?
+  #users = users.joins(:requests).where(requests: { destination: search[:destination]}) if search[:destination].present?
+
+  #cases = cases.joins(:case_question_answers).where(case_question_answers: { question_option_id: case_params[:submitter_relationship] }) if case_params[:submitter_relationship].present?
+  #if search
+     # @users = User.paginate(:page => params[:page], :per_page => 5)
+   #   find(:all, :conditions => ['name LIKE ? ', "%#{search}%"])
+      #@requests = @users.find(:all, :conditions => ['source LIKE ?', "%#{params[:search2]}%"])   
+      #paginate(:page => params[:page], :per_page => 5, :conditions => ['name LIKE ?', "%#{params[:search]}%"])
+   # else
+    #  find(:all)
+      # @requests = @users.find(:all)  
+      #paginate(:page => params[:page], :per_page => 5, :conditions => ['name LIKE ?', "%#{params[:search]}%"])      
+   # end
+    #if params[:search]
+     
+      #@users = User.find(:all, :conditions => ['name LIKE ?', "%#{params[:search]}%"])
+     
+     # @users = User.paginate(:page => params[:page], :per_page => 5, :conditions => ['name LIKE ?', "%#{params[:search]}%"])
+    #else
+      #@users = User.find(:all)
+     
+      #@users = User.paginate(:page => params[:page], :per_page => 5, :conditions => ['name LIKE ?', "%#{params[:search]}%"])      
+    #end
 end
 def feed
   Request.from_users_followed_by(self)	
