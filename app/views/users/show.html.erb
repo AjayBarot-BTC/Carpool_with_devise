@@ -4,8 +4,9 @@
     <section>
       <h1>
         <%= image_tag @user.image_url(:thumb).to_s %><br>
-        <%= @user.name %>
-        <%= @user.phone_no %>
+        Name:
+        <%= @user.name %> <br>
+        Mobile No: <%= @user.phone_no %>
       </h1>
     </section>
     <section>
@@ -13,17 +14,18 @@
       <%= render 'follow_form' if user_signed_in? %>
     </section>
   </aside>
-<!div class="span7">
-<!% if current_user %>
-      <!%= form_for(@user) do |f| %>
-      <!%= f.text_area :message, placeholder: " Post Message" !%>
-      <!%= f.submit :post , class: "btn btn-danger" %>
-      <!%= f.text_area :email %>
-      <!%= f.submit :post , class: "btn btn-danger" %>
-<!%end %>
-<!% end %>
-<!/div>
-<!% if @user.requests.any? %>
-<!%= @user.requests.count %> 
-<!% end %>
-<!/div><br><br><br><br><br><br><br><br><br><br><br><br>
+<div class="span7">
+<div class="stats">
+<% if @user.requests.any? %>
+<br><b>Posted Trip: </b>
+<%= @user.requests.count %>
+<% end %>
+<b><br>Personal Information</b> <br><br><br>
+    <b>Email: </b><%= @user.email %><br><br>
+    <b>City: </b><%= @user.city %><br><br>
+    <b>Gender: </b><%= @user.gender %><br><br>
+    <b>Profession: </b><%= @user.profession %><br><br>
+  </div>
+</div>
+</div>
+</div><br><br><br><br><br><br><br><br><br><br><br><br>

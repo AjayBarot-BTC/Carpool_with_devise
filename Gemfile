@@ -7,6 +7,7 @@ gem 'rails', '4.0.2'
 
 gem 'devise'
 
+#gem 'pdfkit'
 #gem "ransack", github: "activerecord-hackery/ransack", branch: "rails-4"
 
 gem 'bootstrap-datepicker-rails', :git => 'git://github.com/Nerian/bootstrap-datepicker-rails.git'
