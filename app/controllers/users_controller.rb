@@ -16,6 +16,8 @@ class UsersController < ApplicationController
   end
   
   def index
+    #@requests = Request.all
+    #@users = User.joins(:requests)
     @users = User.search(params[:search])
     @users = User.paginate(:page => params[:page], :per_page => 5, :conditions => ['name LIKE ?', "%#{params[:search]}%"])
     #@users = User.paginate(:page => params[:page], :per_page => 5)

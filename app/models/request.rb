@@ -1,6 +1,21 @@
 class Request < ActiveRecord::Base
 	belongs_to :user
 
+	#def self.search(keywords)
+		#requests = order(:destination)
+		#requests = requests.where("destination LIKE ?", "%#{keywords}%") if keywords.present?
+		#requests = requests.where(user_id: user_id) if user_id.present?
+		#requests
+	#end
+
+	#private
+
+  #def find_requests
+   # requests = Request.order(:destination)
+    #requests = requests.where("destination LIKE?", "%#{keywords}%") if keywords.present?
+    
+    #requests
+  #end
 	#def destination
 	#	user.destination if user		
 	#end

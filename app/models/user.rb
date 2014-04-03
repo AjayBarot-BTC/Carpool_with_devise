@@ -28,25 +28,19 @@ def self.from_users_followed_by(user)
     followed_user_ids = user.followed_user_ids
     where("user_id IN (:followed_user_ids) OR user_id = :user_id", followed_user_ids: followed_user_ids, user_id: user)
 end
+#def requests
+ # @requests ||= find_requests
+#end
+
 
 def self.search(keywords)
 
   users = order(:name)
-  users = users.where("name LIKE ?", "%#{keywords}%") if keywords.present?
-  #users = users.where("destination LIKE ?", "%#{keywords}%") if keywords.present?
-  #users = users.joins(:requests).where(requests: { destination: search[:destination]}) if search[:destination].present?
-
+  users = User.joins(:requests)
+  #users = users.where("name LIKE ?", "%#{keywords}%") if keywords.present?
+  #puts "-----------------------#{keywords.inspect}"
+  #users = users
   #cases = cases.joins(:case_question_answers).where(case_question_answers: { question_option_id: case_params[:submitter_relationship] }) if case_params[:submitter_relationship].present?
-  #if search
-     # @users = User.paginate(:page => params[:page], :per_page => 5)
-   #   find(:all, :conditions => ['name LIKE ? ', "%#{search}%"])
-      #@requests = @users.find(:all, :conditions => ['source LIKE ?', "%#{params[:search2]}%"])   
-      #paginate(:page => params[:page], :per_page => 5, :conditions => ['name LIKE ?', "%#{params[:search]}%"])
-   # else
-    #  find(:all)
-      # @requests = @users.find(:all)  
-      #paginate(:page => params[:page], :per_page => 5, :conditions => ['name LIKE ?', "%#{params[:search]}%"])      
-   # end
     #if params[:search]
      
       #@users = User.find(:all, :conditions => ['name LIKE ?', "%#{params[:search]}%"])
@@ -57,12 +51,23 @@ def self.search(keywords)
      
       #@users = User.paginate(:page => params[:page], :per_page => 5, :conditions => ['name LIKE ?', "%#{params[:search]}%"])      
     #end
-end
+  end
+
+ # def self.search(keywords)
+
+    #users = Request.joins(:user).where("destination LIKE ?", "%#{keywords2} %") if keywords2.present?
+    #puts "-----------------------#{user.inspect}"
+  #  users = User.joins(:requests)
+   # users = users.where("destination LIKE ?", "%#{keywords} %") if keywords.present?
+    #users = users.where("destination LIKE ?", "%#{keywords2} %") if keywords2.present?
+
+  #end
+
 def feed
   Request.from_users_followed_by(self)	
 end
 
-def following?(other_user)
+  def following?(other_user)
     relationships.find_by(followed_id: other_user.id)
   end
 
@@ -75,6 +80,8 @@ def unfollow!(other_user)
   end
 
 def feed
-	Request.where("user_id = ?", id)
+	 Request.where("user_id = ?", id)
 end
+
+
 end

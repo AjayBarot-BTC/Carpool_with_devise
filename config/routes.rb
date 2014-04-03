@@ -15,6 +15,7 @@ Authdemo::Application.routes.draw do
   resources :relationships, only: [:create, :destroy]
   resources :users
   resources :admins
+  resources :searches
   #devise_for :models
   #resources :dashboards
   #resources :users
