@@ -12,7 +12,7 @@ validates :email, presence: true, uniqueness: { case_sensitive: false }
 #for follwer and following
 has_many :requests, dependent: :destroy
 
-#has_many :destination
+has_many :searches
 
 has_many :relationships, foreign_key: "follower_id", dependent: :destroy
 
@@ -36,8 +36,8 @@ end
 def self.search(keywords)
 
   users = order(:name)
-  users = User.joins(:requests)
-  #users = users.where("name LIKE ?", "%#{keywords}%") if keywords.present?
+  #users = User.joins(:requests)
+  users = users.where("name LIKE ?", "%#{keywords}%") if keywords.present?
   #puts "-----------------------#{keywords.inspect}"
   #users = users
   #cases = cases.joins(:case_question_answers).where(case_question_answers: { question_option_id: case_params[:submitter_relationship] }) if case_params[:submitter_relationship].present?
