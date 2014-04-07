@@ -18,15 +18,19 @@ class UsersController < ApplicationController
   def index
     #@requests = Request.all
     #@users = User.joins(:requests)
+    @messages = Message.all
     @users = User.search(params[:search])
     @users = User.paginate(:page => params[:page], :per_page => 5, :conditions => ['name LIKE ?', "%#{params[:search]}%"])
     #@users = User.paginate(:page => params[:page], :per_page => 5)
   end
 
 	def show
-		@user = User.find(params[:id])	
+    @message = Message.all
+		@user = User.find(params[:id])
     @requests = @user.requests.paginate(page: params[:page], :per_page => 5)
-	end
+    #@message = Message.find(params[:id])
+	  #@messages = @user.paginate(page: params[:page])
+  end
 
   	def new
     	@user = User.new
@@ -61,8 +65,6 @@ class UsersController < ApplicationController
     	flash[:success] = "User deleted."
     	redirect_to root_url
   	end
-
-    # Use callbacks to share common setup or constraints between actions.
   	private
 
     def set_user

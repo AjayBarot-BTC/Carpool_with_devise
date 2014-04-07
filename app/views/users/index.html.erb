@@ -1,7 +1,6 @@
 <div align="center"><b>List of Users</b></div>
 <% if current_user != (@user) %>
  		<ol class="microposts">
- 		<p><!%= link_to "Advanced Search", searches_path %></p>
  			<% @users.each do |user| %> 
  				<%= render user %>
  			<% end %>

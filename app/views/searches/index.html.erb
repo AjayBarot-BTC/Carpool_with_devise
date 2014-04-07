@@ -13,9 +13,9 @@
 			<% end %>	
 		</aside>
 	</div>
-	<%- @users.each do |user|  %>
+	<%= @users.each do |user| %>
 	<%= render user %>
-	<%end%>
+	<% end %>
 	<%= will_paginate @users %>
 </ol>
 	

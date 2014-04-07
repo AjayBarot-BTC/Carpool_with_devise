@@ -3,12 +3,9 @@ ruby '2.0.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 
-# Use sqlite3 as the database for Active Record
+gem 'mailboxer'
 
 gem 'devise'
-
-#gem 'pdfkit'
-#gem "ransack", github: "activerecord-hackery/ransack", branch: "rails-4"
 
 gem 'bootstrap-datepicker-rails', :git => 'git://github.com/Nerian/bootstrap-datepicker-rails.git'
 
@@ -18,19 +15,13 @@ gem 'twitter-bootstrap-rails'
 
 gem 'rmagick'
 
-#gem 'activeadmin', github: 'gregbell/active_admin'
+gem 'simple_form'
 
 gem 'carrierwave'
 
-#gem 'rails3-jquery-autocomplete'
-
-#gem 'zeus'
-
 gem 'bootstrap-sass', '2.3.2.0'
 
-#gem 'bcrypt-ruby', '3.1.2'
-
-gem 'faker', '1.1.2'
+#gem 'faker', '1.1.2'
 
 gem 'will_paginate', '3.0.4'
 

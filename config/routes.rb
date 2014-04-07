@@ -11,14 +11,13 @@ Authdemo::Application.routes.draw do
       get :following, :followers
     end
     end
+  resources :messages
+  resources :conversations
   resources :requests
   resources :relationships, only: [:create, :destroy]
   resources :users
   resources :admins
   resources :searches
-  #devise_for :models
-  #resources :dashboards
-  #resources :users
   resources :homes
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
