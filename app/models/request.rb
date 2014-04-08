@@ -2,6 +2,12 @@ class Request < ActiveRecord::Base
 	belongs_to :user
 	#has_many :users
 
+	#validates :source, presence: true
+	#validates :destination, presence: true
+	#validates :content, presence: true
+	#validates :date, presence: true
+	#validates :time, presence: true
+
 def self.search2(keywords)
 
   requests = order(:destination)

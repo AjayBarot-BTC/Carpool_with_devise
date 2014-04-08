@@ -1,8 +1,13 @@
-<%= simple_form_for :conversation, url: :conversations do |f| %>
-  <%= f.input :recipients, placeholder: "Enter email of sender " %>
-  <%= f.input :subject, placeholder: "Mention your Name" %>
-  <%= f.input :body %>
-  <div class="form-actions">
+<!%= simple_form_for :conversation, url: :conversations do |f| %>
+  <!%= f.input :recipients, placeholder: "Enter email of sender " %>
+  <!%= f.input :subject, placeholder: "Mention your Name" %>
+  <!%= f.input :body %>
+<!% end %>
+<%= form_for(:conversation, url: :conversations) do |f| %>
+<%= f.text_field :recipients, placeholder: "Enter email of sender" %><br>
+<%= f.text_field :subject, placeholder: "Mention your Name" %><br>
+<%= f.text_field :body, placeholder: "Body" %><br>
+<div class="form-actions">
     <%= f.button :submit, class: 'btn-primary' %>
     <%= submit_tag 'Cancel', type: :reset, class: 'btn btn-danger' %>
   </div>

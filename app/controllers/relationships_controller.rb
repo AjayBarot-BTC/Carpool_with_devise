@@ -1,4 +1,5 @@
 class RelationshipsController < ApplicationController
+	before_filter :authenticate_user!
 	#before_action :signed_in_user
 
 	def create

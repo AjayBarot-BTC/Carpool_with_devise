@@ -1,4 +1,5 @@
 class SearchesController < ApplicationController
+before_filter :authenticate_user!
 before_action :set_search, only: [:show, :edit, :update, :destroy]
 def show
     @searches = Search.find(params[:id])

@@ -1,5 +1,5 @@
 class RequestsController < ApplicationController
-	
+	before_action :set_request, only: [:show, :edit, :update, :destroy]
 	before_action :correct_user, only: :destroy
 
 	def index
@@ -13,18 +13,36 @@ class RequestsController < ApplicationController
 	end
 
 	def create
-		@request = current_user.requests.build(request_params)
+		#@request = current_user.requests.build(request_params)
+		#if @request.save
+		#	flash[:success] = "Post created!"
+		#	redirect_to root_url
+		#else
+		#	@feed_items = []
+		#	render 'homes/index'	
+		#end		
+	#end
+	@request = current_user.requests.build(request_params)
+	respond_to do |format|
 		if @request.save
-			flash[:success] = "Post created!"
-			redirect_to root_url
+			format.html { redirect_to root_url, notice: 'Post created!' }
+			#flash[:success] = "Post created!"
+			format.js
+			format.json { render json: root_url, status: :created, location: root_url }
 		else
 			@feed_items = []
-			render 'homes/index'	
-		end		
-	end
+			format.html {}
+			format.json { render json: @request.errors, status: :unprocessable_entity }
+			render 'homes/index'
+		#else	
+			#render ''	
+		end	
+		end
+		end
 
 	def destroy
 		@request.destroy
+		flash[:success] = "Post deleted!"
 		redirect_to root_url
 	end
 
@@ -34,6 +52,10 @@ class RequestsController < ApplicationController
 	end
 
 	private 
+
+	def set_request
+      @request = Request.find(params[:id])
+    end
 
 	def request_params
 		params.require(:request).permit(:content, :destination, :source, :time, :date)
