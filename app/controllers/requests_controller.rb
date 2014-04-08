@@ -27,15 +27,13 @@ class RequestsController < ApplicationController
 		if @request.save
 			format.html { redirect_to root_url, notice: 'Post created!' }
 			#flash[:success] = "Post created!"
-			format.js
+			format.js {}
 			format.json { render json: root_url, status: :created, location: root_url }
 		else
 			@feed_items = []
 			format.html {}
 			format.json { render json: @request.errors, status: :unprocessable_entity }
-			render 'homes/index'
-		#else	
-			#render ''	
+			render 'homes/index'	
 		end	
 		end
 		end
