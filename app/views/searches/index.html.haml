@@ -14,6 +14,6 @@
         = submit_tag "Search", name: nil, class: "btn btn-danger"
         %br/
         %br/
-  = @users.each do |user|
+  - @users.each do |user|
     = render user
   = will_paginate @users
