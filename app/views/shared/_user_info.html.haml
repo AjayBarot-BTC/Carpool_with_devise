@@ -1,0 +1,10 @@
+= image_tag current_user.image_url(:thumb).to_s
+%h1
+  Name:
+  \#{current_user.name}
+  %br/
+  Mobile No: #{current_user.phone_no}
+%span
+  = link_to "view my profile", current_user
+%span
+  = pluralize(current_user.requests.count, "Post")

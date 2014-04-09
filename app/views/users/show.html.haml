@@ -1,0 +1,32 @@
+- provide(:title, @user.name)
+.row
+  %aside.span6
+    %section
+      %h1
+        = image_tag @user.image_url(:thumb).to_s
+        %br/
+        Name:
+        \#{@user.name}
+        %br/
+        Mobile No: #{@user.phone_no}
+    %section
+      = render 'shared/stats'
+      %br/
+      = render 'follow_form' if user_signed_in?
+  .span6
+    .stats
+      - if @user.requests.any?
+        %br/
+        %b Posted Trip:
+        = @user.requests.count
+      %b
+        %br>/
+        Personal Information
+      %b Email:
+      = @user.email
+      %b City:
+      = @user.city
+      %b Gender:
+      = @user.gender
+      %b Profession:
+      = @user.profession

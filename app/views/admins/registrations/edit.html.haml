@@ -1,0 +1,32 @@
+%h2
+  Edit #{resource_name.to_s.humanize}
+= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f|
+  = devise_error_messages!
+  %form{role: "form"}
+    .form-group
+      %label{for: "exampleInputEmail1"} Email:
+      %br/
+      = f.email_field :email, :autofocus => true, class: "form-control", placeholder: "Enter email", id: "exampleInputEmail1"
+    .form-group
+      %label{for: "exampleInputPassword1"} Password:
+      %br/
+      %br/
+      = f.password_field :password, :autocomplete => "off", class: "form-control", placeholder: "Password", id: "exampleInputPassword1"
+    .form-group
+      %label{for: "exampleInputPassword1"} Password_Confirmation:
+      %br/
+      %br/
+      = f.password_field :password_confirmation, class: "form-control", placeholder: "Password Confirmation", id: "exampleInputPassword1"
+    .form-group
+      %label{for: "exampleInputPassword1"} Current_Password:
+      %i (we need your current password to confirm your changes)
+      %br/
+      %br/
+      = f.password_field :current_password, class: "form-control", placeholder: "Current_Password", id: "exampleInputPassword1"
+    = f.submit "Update", class: "btn btn-large btn-primary"
+%br/
+%h3 Cancel my account
+%br/
+= button_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure? This will remove the User and it is non-reversible!!. " }, :method => :delete, class: "btn btn-large btn-primary"
+%br/
+= link_to "Back", :back

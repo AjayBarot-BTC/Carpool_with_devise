@@ -1,0 +1,6 @@
+%li
+  = image_tag @user.image_url(:thumb).to_s
+  %br/
+  = link_to @user.name, @user
+  = @user.phone_no
+  = render @user.requests

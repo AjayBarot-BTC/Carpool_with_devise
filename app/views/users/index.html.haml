@@ -1,0 +1,7 @@
+%div{align: "center"}
+  %b List of Users
+- if current_user != (@user)
+  %ol.microposts
+    - @users.each do |user|
+      = render user
+  		= will_paginate @users

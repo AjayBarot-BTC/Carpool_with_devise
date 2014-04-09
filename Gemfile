@@ -11,11 +11,13 @@ gem 'bootstrap-datepicker-rails', :git => 'git://github.com/Nerian/bootstrap-dat
 
 #gem 'kaminari'
 
-gem 'twitter-bootstrap-rails'
+#gem 'twitter-bootstrap-rails'
 
 gem 'rmagick'
 
-gem 'simple_form'
+gem 'sprockets'
+
+#gem 'simple_form'
 
 gem 'carrierwave'
 
@@ -29,6 +31,8 @@ gem 'bootstrap-will_paginate', '0.0.9'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.1'
+
+gem 'haml'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 2.1.1'

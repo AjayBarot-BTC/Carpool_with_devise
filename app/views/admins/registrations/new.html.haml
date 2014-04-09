@@ -1,0 +1,18 @@
+%h2 Sign up
+= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :multipart => true } ) do |f|
+  = devise_error_messages!
+  %form{role: "form"}
+    .form-group
+      %label{for: "exampleInputEmail1"} Email:
+      %br/
+      = f.email_field :email, :autofocus => true, class: "form-control", placeholder: "Enter email", id: "exampleInputEmail1"
+    .form-group
+      %label{for: "exampleInputPassword1"} Password:
+      %br/
+      = f.password_field :password, class: "form-control", placeholder: "Enter password", id: "exampleInputPassword1"
+    .form-group
+      %label{for: "exampleInputPasswordConfirmation1"} Password_Confirmation:
+      %br/
+      = f.password_field :password_confirmation, class: "form-control", placeholder: "Enter password_confirmation", id: "exampleInputPasswordConfirmation1"
+    %div
+      = f.submit "Sign up", class: "btn btn-large btn-primary"

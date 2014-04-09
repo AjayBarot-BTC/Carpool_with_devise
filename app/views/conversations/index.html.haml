@@ -1,0 +1,15 @@
+%p= link_to 'My Conversations', :conversations
+%br/
+%b Conversations
+%br/
+%br/
+%ol.microposts
+  %li
+    %span.destination
+      %b Inbox
+      = render mailbox.inbox
+    %span.destination
+      %b Sentbox
+      = render mailbox.sentbox
+    %div{align: "center"}
+      = link_to 'Start Conversation', :new_conversation

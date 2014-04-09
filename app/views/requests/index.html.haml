@@ -1,0 +1,13 @@
+= form_tag(:requests, method: "get") do
+  = text_field_tag "search", params[:search], placeholder: "Search by destination"
+  %br/
+  = submit_tag "Search", name: nil, class: "btn btn-danger"
+  %br/
+  %br/
+  %ol.microposts
+    - @users.any? do |user|
+      = render user
+    - @requests.each do |request|
+      = render request
+      = will_paginate @requests
+    = will_paginate @users

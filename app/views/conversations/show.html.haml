@@ -1,0 +1,7 @@
+%p= link_to 'My Conversations', :conversations
+%ol.microposts
+  = conversation.subject
+  = content_tag_for(:li, conversation.receipts_for(current_user)) do |receipt|
+    - message = receipt.message
+    = message.subject
+    = message.body
