@@ -9,9 +9,7 @@ gem 'devise'
 
 gem 'bootstrap-datepicker-rails', :git => 'git://github.com/Nerian/bootstrap-datepicker-rails.git'
 
-#gem 'kaminari'
-
-#gem 'twitter-bootstrap-rails'
+gem 'twitter-bootstrap-rails'
 
 gem 'rmagick'
 
@@ -66,15 +64,3 @@ end
 group :development do
 	gem 'sqlite3'
 end
-
-# Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.1.2'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]

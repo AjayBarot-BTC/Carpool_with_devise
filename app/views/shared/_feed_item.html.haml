@@ -1,25 +1,36 @@
-%li{id: feed_item.id}
-  = image_tag current_user.image_url(:thumb).to_s
-  %span.user
+.hell
+  %li{id: feed_item.id}
+    = image_tag current_user.image_url(:thumb).to_s
+    %span.user
+      %br/
+      %script{src: "http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"}
+        :cdata
+          \:cdata
+      :javascript
+        $(document).ready(function(){
+          $(".hello").click(function(){
+            $(".hell").toggle();
+          });
+        });
+      = link_to feed_item.user.name, feed_item.user
+    %span.destination
+      %b Source:
+      = feed_item.source
+    %span.destination
+      %b Destination:
+      = feed_item.destination
+    %span.destination
+      %b Date:
+      = feed_item.date
+    %span.timestamp
+      %b Time:
+      = feed_item.time
+    %span.content
+      %b Comment:
+      = feed_item.content
     %br
-    = link_to feed_item.user.name, feed_item.user
-  %span.destination
-    %b Source:
-    = feed_item.source
-  %span.destination
-    %b Destination:
-    = feed_item.destination
-  %span.destination
-    %b Date:
-    = feed_item.date
-  %span.timestamp
-    %b Time:
-    = feed_item.time
-  %span.content
-    %b Comment:
-    = feed_item.content
-  %br
-  %span.timestamp
-    Posted #{time_ago_in_words(feed_item.created_at)} ago.
-    - if current_user == feed_item.user
-      = link_to "Delete", feed_item, method: :delete, data: { confirm: "You sure?" }, title: "Delete"
+    %span.timestamp
+      Posted #{time_ago_in_words(feed_item.created_at)} ago.
+      - if current_user == feed_item.user
+        = link_to "Delete", feed_item ,method: :delete, data: { confirm: "You sure?" }, title: "Delete"
+= submit_tag "Toggle", class: "hello"
