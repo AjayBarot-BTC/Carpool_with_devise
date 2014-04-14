@@ -102,9 +102,9 @@ function geocode_lookup( type, value, update ) {
         $('#gmaps-error').show();
         update_ui('', value)
       }
-    };
+    }
   });
-};
+}
 
 // initialise the jqueryUI autocomplete element
 function autocomplete_init() {
@@ -147,11 +147,11 @@ function autocomplete_init() {
       $('#gmaps-input-address').autocomplete("enable")
     }
   });
-}; // autocomplete_init
+} // autocomplete_init
 
 $(document).ready(function() { 
   if( $('#gmaps-canvas').length  ) {
     gmaps_init();
     autocomplete_init();
-  }; 
+  }
 });
