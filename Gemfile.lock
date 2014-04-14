@@ -170,7 +170,6 @@ DEPENDENCIES
   rmagick
   sass-rails (~> 4.0.1)
   sdoc
-  sprockets
   sqlite3
   turbolinks
   twitter-bootstrap-rails

@@ -13,8 +13,6 @@ gem 'twitter-bootstrap-rails'
 
 gem 'rmagick'
 
-gem 'sprockets'
-
 gem 'carrierwave'
 
 gem 'bootstrap-sass', '2.3.2.0'
