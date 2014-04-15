@@ -5,14 +5,22 @@
     = render 'shared/error_messages', object: f.object
     #container
       #instructions
-        %h1 Enter Location
+        %label{for: ""} Destination:
+        %br/
         = f.text_field :destination, placeholder: "Start typing a destination place  ...", type: "text", id: "gmaps-input-address"
+        %label{for: ""} Source:
+        %br/
         = f.text_field :source, placeholder: "Start typing a source place...", type: "text", id: "gmaps-input-address"
         #gmaps-error
         #gmaps-canvas
         %br/
-      = f.text_field :date, 'data-behaviour' => 'datepicker', placeholder: "Enter Date"
-      = f.text_field :time, placeholder: "Time"
-      = f.text_area :content, placeholder: "Comment", align: "center"
+      %label{for: ""} Date of Trip:
       %br/
+      = f.text_field :date, 'data-behaviour' => 'datepicker', placeholder: "Enter Date"
+      %label{for: ""} Time of Trip:
+      %br/
+      = f.text_field :time, placeholder: "Time"
+      %label{for: ""} Comment:
+      %br/
+      = f.text_area :content, placeholder: "Comment", align: "center"
       = f.submit "Post", class: "btn btn-large btn-primary"

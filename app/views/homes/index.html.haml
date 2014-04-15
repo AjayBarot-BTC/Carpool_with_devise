@@ -16,20 +16,21 @@
     = link_to "Sign up now!", new_user_registration_path, class: "btn btn-large btn-primary"
     %br
       %br
-        #myCarousel.carousel.slide
-          %ol.carousel-indicators
-            %li.active{"data-slide-to" => "0", "data-target" => "#myCarousel"}
-            %li{"data-slide-to" => "1", "data-target" => "#myCarousel"}
-            %li{"data-slide-to" => "2", "data-target" => "#myCarousel"}
-            %li{"data-slide-to" => "3", "data-target" => "#myCarousel"}
-          .carousel-inner
-            .active.item
-              = link_to image_tag("paris-traffic.jpg", alt: "Rails", size: "600x400")
-            .item 
-              = link_to image_tag("rails.png", alt: "Rails", size: "300x400")
-            .item
-              = link_to image_tag("actcarpool_img.jpg", alt: "Rails", size: "500x400")
-            .item
-              = link_to image_tag("lets.jpg", alt: "Rails", size: "350x600")
-          %a.carousel-control.left{"data-slide" => "prev", href: "#myCarousel"} 
-          %a.carousel-control.right{"data-slide" => "next", href: "#myCarousel"} 
+        %div{align: "center"}
+          #myCarousel.carousel.slide
+            %ol.carousel-indicators
+              %li.active{"data-slide-to" => "0", "data-target" => "#myCarousel"}
+              %li{"data-slide-to" => "1", "data-target" => "#myCarousel"}
+              %li{"data-slide-to" => "2", "data-target" => "#myCarousel"}
+              %li{"data-slide-to" => "3", "data-target" => "#myCarousel"}
+            .carousel-inner
+              .active.item
+                = link_to image_tag("paris-traffic.jpg", alt: "Rails", size: "600x400")
+              .item 
+                = link_to image_tag("rails.png", alt: "Rails", size: "300x400")
+              .item
+                = link_to image_tag("actcarpool_img.jpg", alt: "Rails", size: "500x400")
+              .item
+                = link_to image_tag("lets.jpg", alt: "Rails", size: "350x600")
+            %a.carousel-control.left{"data-slide" => "prev", href: "#myCarousel"} 
+            %a.carousel-control.right{"data-slide" => "next", href: "#myCarousel"} 
