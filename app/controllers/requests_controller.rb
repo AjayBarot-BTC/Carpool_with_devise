@@ -3,8 +3,8 @@ class RequestsController < ApplicationController
 	before_action :correct_user, only: :destroy
 
 	def index
-		@requests = Request.search2(params[:search2])
-		@requests = Request.paginate(:page => params[:page], :per_page => 5, :conditions => ['destination LIKE ?', "%#{params[:search2]}%"])
+		#@requests = Request.search2(params[:search2])
+		@requests = Request.paginate(:page => params[:page], :per_page => 5)
 		@users = User.all
 		@users = User.paginate(:page => params[:page], :per_page => 5)
 		#@requests = Request.search(params[:keywords], :conditions => ['destination LIKE ?', "%#{params[:keywords]}%"])

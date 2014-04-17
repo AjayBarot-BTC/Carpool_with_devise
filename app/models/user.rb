@@ -42,8 +42,12 @@ end
 def self.search(keywords)
 
   users = order(:name)
-  #users = User.joins(:requests)
-  users = users.where("name LIKE ?", "%#{keywords}%") if keywords.present?
+  #@users = User.joins([:requests]).where("name LIKE ? OR destination LIKE ?","#{keywords}%","#{keywords}%")
+  #users = users.select("*").joins(:requests)
+  #users = users.where("name OR destination = ?", "%#{keywords}%") if keywords.present?
+  #users = Request.joins(:user).where("name LIKE ? OR destination LIKE ?", "#{keywords}%","#{keywords}%") if keywords.present?
+
+  #users = User.where("name OR destination LIKE ?", "%#{keywords}%") if keywords.present?
   #puts "-----------------------#{keywords.inspect}"
   #cases = cases.joins(:case_question_answers).where(case_question_answers: { question_option_id: case_params[:submitter_relationship] }) if case_params[:submitter_relationship].present?
     #if params[:search]

@@ -19,9 +19,16 @@ class UsersController < ApplicationController
   def index
     #@requests = Request.all
     #@users = User.joins(:requests)
+    #@user = User.all
     @messages = Message.all
+    #@users = User.select("*").joins(:requests).where("user.name = ? OR request.destination = ?", params[:search], params[:search] )
     @users = User.search(params[:search])
-    @users = User.paginate(:page => params[:page], :per_page => 5, :conditions => ['name LIKE ?', "%#{params[:search]}%"])
+    @users = User.joins([:requests]).where("name LIKE ? OR destination LIKE ?","#{params[:search]}%", "#{params[:search]}%")
+    #@users = User.paginate(:page => params[:page], :per_page => 5)
+    #@users = Request.joins([:user]).where("name LIKE ? OR destination LIKE ?","#{params[:search]}%", "#{params[:search]}%")
+    #@users = User.paginate(:page => params[:page], :per_page => 5, :conditions => ['name OR destination LIKE ?', "#{params[:search]}%"])
+    #@users = User.paginate(:page => params[:page], :per_page => 5, :conditions => ['name OR destination LIKE ?', "%#{params[:search]}%"])
+    #where("name LIKE ? OR destination LIKE ?", "#{params[:keywords]}%","#{params[:keywords]}%")
     #@users = User.paginate(:page => params[:page], :per_page => 5)
   end
 

@@ -5,10 +5,10 @@
     = render 'shared/error_messages', object: f.object
     #container
       #instructions
-        %label{for: ""} Destination:
+        %label{for: "gmaps-input-address"} Destination:
         %br/
         = f.text_field :destination, placeholder: "Start typing a destination place  ...", type: "text", id: "gmaps-input-address"
-        %label{for: ""} Source:
+        %label{for: "gmaps-input-address"} Source:
         %br/
         = f.text_field :source, placeholder: "Start typing a source place...", type: "text", id: "gmaps-input-address"
         #gmaps-error

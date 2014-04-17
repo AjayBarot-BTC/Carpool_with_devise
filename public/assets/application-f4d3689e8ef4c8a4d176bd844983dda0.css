@@ -7385,22 +7385,64 @@ body {
   padding-top: 60px;
 }
 
-/* line 11, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
+/* line 10, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
+.btn-custom-darken.active {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* line 13, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
+.btn-custom-darken {
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #1ab800;
+  background-image: -moz-linear-gradient(top, #1dcc00, #169900);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#1dcc00), to(#169900));
+  background-image: -webkit-linear-gradient(top, #1dcc00, #169900);
+  background-image: -o-linear-gradient(top, #1dcc00, #169900);
+  background-image: linear-gradient(to bottom, #1dcc00, #169900);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff1dcc00', endColorstr='#ff169900', GradientType=0);
+  border-color: #169900 #169900 #0b4d00;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  *background-color: #169900;
+  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+
+/* line 36, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
+.btn-custom-darken:hover,
+.btn-custom-darken:focus,
+.btn-custom-darken:active,
+.btn-custom-darken.active,
+.btn-custom-darken.disabled,
+.btn-custom-darken[disabled] {
+  color: #ffffff;
+  background-color: #169900;
+  *background-color: #128000;
+}
+
+/* line 42, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
+.btn-custom-darken:active,
+.btn-custom-darken.active {
+  background-color: #0f6600;
+}
+
+/* line 46, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
 .center {
   text-align: center;
 }
 
-/* line 15, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
+/* line 50, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
 .center h1 {
   margin-bottom: 10px;
 }
 
-/* line 19, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
+/* line 54, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
 }
 
-/* line 23, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
+/* line 58, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
 h1 {
   font-size: 3em;
   letter-spacing: -2px;
@@ -7408,7 +7450,7 @@ h1 {
   text-align: center;
 }
 
-/* line 30, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
+/* line 65, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
 h2 {
   font-size: 1.2em;
   letter-spacing: -1px;
@@ -7418,13 +7460,13 @@ h2 {
   color: #999;
 }
 
-/* line 39, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
+/* line 74, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
 p {
   font-size: 1.1em;
   line-height: 1.7em;
 }
 
-/* line 44, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
+/* line 79, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
 #logo {
   float: left;
   margin-right: 10px;
@@ -7437,13 +7479,13 @@ p {
   line-height: 1;
 }
 
-/* line 56, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
+/* line 91, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
 #logo:hover {
   color: #fff;
   text-decoration: none;
 }
 
-/* line 61, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
+/* line 96, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
 footer {
   margin-top: 45px;
   padding-top: 5px;
@@ -7451,50 +7493,50 @@ footer {
   color: #999;
 }
 
-/* line 68, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
+/* line 103, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
 footer a {
   color: #555;
 }
 
-/* line 72, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
+/* line 107, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
 footer a:hover {
   color: #222;
 }
 
-/* line 76, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
+/* line 111, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
 footer small {
   float: left;
 }
 
-/* line 80, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
+/* line 115, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
 footer ul {
   float: right;
   list-style: none;
 }
 
-/* line 85, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
+/* line 120, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
 footer ul li {
   float: left;
   margin-left: 10px;
 }
 
-/* line 90, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
+/* line 125, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
 aside section {
   padding: 10px 0;
   border-top: 1px solid;
 }
-/* line 93, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
+/* line 128, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
 aside section:first-child {
   border: 0;
   padding-top: 0;
 }
-/* line 97, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
+/* line 132, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
 aside section span {
   display: block;
   margin-bottom: 3px;
   line-height: 1;
 }
-/* line 102, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
+/* line 137, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
 aside section h1 {
   font-size: 1.4em;
   text-align: left;
@@ -7503,108 +7545,108 @@ aside section h1 {
   margin-top: 0px;
 }
 
-/* line 111, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
+/* line 146, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
 .gravatar {
   float: left;
   margin-right: 10px;
 }
 
-/* line 116, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
+/* line 151, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
 input, select, .uneditable-input {
   border: 1px solid #bbb;
   width: 50%;
   margin-bottom: 15px;
 }
 
-/* line 122, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
+/* line 157, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
 input {
   height: auto !important;
 }
 
-/* line 125, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
+/* line 160, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
 #error_explanation {
   color: #f00;
 }
-/* line 127, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
+/* line 162, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
 #error_explanation ul {
   list-style: none;
   margin: 0 0 18px 0;
 }
 
-/* line 138, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
+/* line 173, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
 .users {
   list-style: none;
   margin: 0;
 }
-/* line 141, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
+/* line 176, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
 .users li {
   overflow: auto;
   padding: 10px 0;
   border-top: 1px solid;
 }
-/* line 145, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
+/* line 180, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
 .users li:last-child {
   border-bottom: 1px solid;
 }
 
-/* line 150, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
+/* line 185, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
 .microposts {
   list-style: none;
   margin: 10px 0 0 0;
 }
-/* line 154, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
+/* line 189, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
 .microposts li {
   padding: 10px 0;
   border-top: 1px solid black;
 }
 
-/* line 159, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
+/* line 194, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
 .content {
   display: block;
 }
 
-/* line 162, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
+/* line 197, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
 .destination {
   display: block;
 }
 
-/* line 165, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
+/* line 200, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
 .timestamp {
   color: grey;
 }
 
-/* line 169, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
+/* line 204, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
 .stats {
   overflow: auto;
 }
-/* line 171, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
+/* line 206, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
 .stats a {
   float: left;
   padding: 0 10px;
   border-left: 1px solid;
   color: gray;
 }
-/* line 176, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
+/* line 211, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
 .stats a:first-child {
   padding-left: 0;
   border: 0;
 }
-/* line 180, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
+/* line 215, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
 .stats a:hover {
   text-decoration: none;
   color: #049cdb;
 }
-/* line 185, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
+/* line 220, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
 .stats strong {
   display: block;
 }
 
-/* line 190, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
+/* line 225, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
 .user_avatars {
   overflow: auto;
   margin-top: 1px;
 }
-/* line 193, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
+/* line 228, /home/ajay/rails_projects/unstable/authdemo/app/assets/stylesheets/custom.css.scss */
 .user_avatars .gravatar {
   margin: 1px 1px;
 }
@@ -8129,24 +8171,6 @@ button.ui-button::-moz-focus-inner {
 	position: static;
 	float: right;
 }
-.ui-progressbar {
-	height: 2em;
-	text-align: left;
-	overflow: hidden;
-}
-.ui-progressbar .ui-progressbar-value {
-	margin: -1px;
-	height: 100%;
-}
-.ui-progressbar .ui-progressbar-overlay {
-	background: url("images/animated-overlay.gif");
-	height: 100%;
-	filter: alpha(opacity=25);
-	opacity: 0.25;
-}
-.ui-progressbar-indeterminate .ui-progressbar-value {
-	background-image: none;
-}
 .ui-resizable {
 	position: relative;
 }
@@ -8404,7 +8428,7 @@ body .ui-tooltip {
 .ui-widget select,
 .ui-widget textarea,
 .ui-widget button {
-	font-family: Trebuchet,Tahoma,Verdana,Arial,sans-serif;
+	font-family: Trebuchet MS,Tahoma,Verdana,Arial,sans-serif;
 	font-size: 1em;
 }
 .ui-widget-content {
@@ -8544,25 +8568,21 @@ body .ui-tooltip {
 .ui-widget-content .ui-icon {
 	background-image: url("images/ui-icons_222222_256x240.png");
 }
-.ui-widget-header .ui-icon {
-	background-image: url("images/ui-icons_ffffff_256x240.png");
-}
 .ui-state-default .ui-icon {
-	background-image: url("images/ui-icons_ef8c08_256x240.png");
+	background-image: url("images/ui-icons_222222_256x240.png");
 }
-.ui-state-hover .ui-icon,
-.ui-state-focus .ui-icon {
-	background-image: url("images/ui-icons_ef8c08_256x240.png");
+.ui-state-hover .ui-icon {
+	background-image: url("images/ui-icons_222222_256x240.png");
 }
 .ui-state-active .ui-icon {
-	background-image: url("images/ui-icons_ef8c08_256x240.png");
+	background-image: url("images/ui-icons_222222_256x240.png");
 }
 .ui-state-highlight .ui-icon {
-	background-image: url("images/ui-icons_228ef1_256x240.png");
+	background-image: url("images/ui-icons_222222_256x240.png");
 }
 .ui-state-error .ui-icon,
 .ui-state-error-text .ui-icon {
-	background-image: url("images/ui-icons_ffd27a_256x240.png");
+	background-image: url("images/ui-icons_222222_256x240.png");
 }
 
 /* positioning */

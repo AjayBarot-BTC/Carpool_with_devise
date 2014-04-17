@@ -8,25 +8,25 @@ class Request < ActiveRecord::Base
 	#validates :date, presence: true
 	#validates :time, presence: true
 
-def self.search2(keywords)
+#def self.search2(keywords)
 
-  requests = order(:destination)
+ # requests = order(:destination)
   #users = User.joins(:requests)
-  requests = requests.where("destination LIKE ?", "%#{keywords}%") if keywords.present?
+ # requests = requests.where("destination LIKE ?", "%#{keywords}%") if keywords.present?
   #puts "-----------------------#{keywords.inspect}"
   #users = users
   #cases = cases.joins(:case_question_answers).where(case_question_answers: { question_option_id: case_params[:submitter_relationship] }) if case_params[:submitter_relationship].present?
     #if params[:search]
      
-      #@users = User.find(:all, :conditions => ['name LIKE ?', "%#{params[:search]}%"])
+      #@users = User.where(:all, :conditions => ['name LIKE ?', "%#{params[:search]}%"])
      
      # @users = User.paginate(:page => params[:page], :per_page => 5, :conditions => ['name LIKE ?', "%#{params[:search]}%"])
     #else
-      #@users = User.find(:all)
+      #@users = User.where(:all)
      
       #@users = User.paginate(:page => params[:page], :per_page => 5, :conditions => ['name LIKE ?', "%#{params[:search]}%"])      
     #end
-  end
+  #end
 	#def self.search(keywords)
 		#requests = order(:destination)
 		#requests = requests.where("destination LIKE ?", "%#{keywords}%") if keywords.present?

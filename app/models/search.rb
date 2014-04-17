@@ -8,10 +8,10 @@ class Search < ActiveRecord::Base
   
 #cases = cases.joins(:case_question_answers).where(case_question_answers: { question_option_id: case_params[:submitter_relationship] }) if case_params[:submitter_relationship].present?
 
-  def self.search(keywords)
-    searches = order(:name)
+  #def self.search(keywords)
+   # searches = order(:name)
     #searches = Request.joins(:user)
-    searches = searches.where("name like ?", "%#{keywords}%") if keywords.present?
+   # searches = searches.where("name like ?", "%#{keywords}%") if keywords.present?
   #def users
   	#@users ||= find_users
   #end
@@ -20,10 +20,10 @@ class Search < ActiveRecord::Base
   	#users = User.order(:name)
   	#users = users.where("name like ?", "%#{keywords}%") if keywords.present?
   	#users
-  end
+  #end
 
-  def self.search2(keywords)
-    searches = order(:destination)
-    searches = searches.where("destination like ?", "%#{keywords}%") if keywords.present?
-  end
+ # def self.search2(keywords)
+  #  searches = order(:destination)
+ #   searches = searches.where("destination like ?", "%#{keywords}%") if keywords.present?
+ # end
 end

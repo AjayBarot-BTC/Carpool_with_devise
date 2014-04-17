@@ -4,14 +4,7 @@
       = form_tag(:users, method: "get") do
         = text_field_tag "search", params[:search], placeholder: "Enter Name"
         %br/
-        = submit_tag "Search", name: nil, class: "btn btn-danger"
-        %br/
-        %br/
-    %aside.span6
-      = form_tag(:requests, method: "get") do
-        = text_field_tag "search2", params[:search2], placeholder: "Enter destination"
-        %br/
-        = submit_tag "Search", name: nil, class: "btn btn-danger"
+        = submit_tag "Search", name: nil, class: "btn-custom-darken"
         %br/
         %br/
   - @users.each do |user|
