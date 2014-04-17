@@ -16,6 +16,8 @@ def index
 	#@searches = Search.all
 	#@searches = Search.search(params[:search])
 	@users = User.all
+	#@searches = User.joins([:requests]).where("name LIKE ? OR destination LIKE ?","#{params[:search]}%", "#{params[:search]}%")
+	#@searches = User.paginate(:page => params[:page], :per_page => 5, :conditions => ['name LIKE ? OR destination LIKE ?', "%#{params[:search]}%", "#{params[:search]}%"])
 	@users = User.paginate(:page => params[:page], :per_page => 5)
 	#redirect_to @searches
 	#@requests = Request.all
