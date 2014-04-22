@@ -40,7 +40,6 @@ class UsersController < ApplicationController
     #@message = Message.find(params[:id])
 	  #@messages = @user.paginate(page: params[:page])
   end
-
   	def new
     	@user = User.new
   	end
@@ -81,6 +80,6 @@ class UsersController < ApplicationController
     end
 
     def user_params
-      params.require(:user).permit(:name, :phone_no, :image, :gender, :city, :year_of_birth, :profession)
+      params.require(:user).permit(:name, :phone_no, :image, :gender, :city, :year_of_birth, :profession, :current_sign_in_ip, :longitude, :latitude)
     end
 end

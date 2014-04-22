@@ -7,6 +7,8 @@ gem 'mailboxer'
 
 gem 'devise'
 
+gem 'geocoder'
+
 gem 'bootstrap-datepicker-rails', :git => 'git://github.com/Nerian/bootstrap-datepicker-rails.git'
 
 gem 'twitter-bootstrap-rails'
@@ -25,6 +27,8 @@ gem 'bootstrap-will_paginate', '0.0.9'
 gem 'sass-rails', '~> 4.0.1'
 
 gem 'haml'
+
+gem 'rspec'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 2.1.1'

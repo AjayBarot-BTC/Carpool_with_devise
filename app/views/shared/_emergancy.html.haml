@@ -1,0 +1,6 @@
+= form_tag new_user_path, :method => :get do
+  = hidden_field_tag 'current_sign_in_ip'
+= image_tag"http://maps.google.com/maps/api/staticmap?size=450x300&sensor=true&zoom=16&markers=#{@user.current_sign_in_ip}%2C#{@user.current_sign_in_ip}"
+%br 
+IP:
+\#{current_user.current_sign_in_ip}

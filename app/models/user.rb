@@ -5,6 +5,9 @@ mount_uploader :image, ImageUploader
 
 acts_as_messageable
 
+geocoded_by :current_sign_in_ip
+after_validation :geocode
+
 devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
 
 validates :name, presence: true, length: {maximum: 50}
