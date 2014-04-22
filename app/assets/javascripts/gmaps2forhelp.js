@@ -15,7 +15,7 @@ function gmaps_init(){
   };
 
   // create our map object
-  map = new google.maps.Map(document.getElementById("gmaps-canvas"), options);
+  map = new google.maps.Map(document.getElementById("gmaps-canvas2"), options);
 
   // the geocoder object allows us to do latlng lookup based on address
   geocoder = new google.maps.Geocoder();
@@ -37,7 +37,7 @@ function gmaps_init(){
     geocode_lookup( 'latLng', event.latLng  );
   });
 
-  $('#gmaps-error').hide();
+  $('#gmaps-error2').hide();
 }
 
 // move the marker to a new position, and center the map on it
@@ -48,8 +48,8 @@ function update_map( geometry ) {
 
 // fill in the UI elements with new position data
 function update_ui( address, latLng ) {
-  $('#gmaps-input-address').autocomplete("close");
-  $('#gmaps-input-address').val(address);
+  $('#gmaps-input-address2').autocomplete("close");
+  $('#gmaps-input-address2').val(address);
   //$('#gmaps-output-latitude').html(latLng.lat());
   //$('#gmaps-output-longitude').html(latLng.lng());
 }
@@ -70,8 +70,8 @@ function geocode_lookup( type, value, update ) {
   request[type] = value;
 
   geocoder.geocode(request, function(results, status) {
-    $('#gmaps-error').html('');
-    $('#gmaps-error').hide();
+    $('#gmaps-error2').html('');
+    $('#gmaps-error2').hide();
     if (status == google.maps.GeocoderStatus.OK) {
       // Google geocoding has succeeded!
       if (results[0]) {
@@ -83,8 +83,8 @@ function geocode_lookup( type, value, update ) {
         if( update ) { update_map( results[0].geometry ) }
       } else {
         // Geocoder status ok but no results!?
-        $('#gmaps-error').html("Sorry, something went wrong. Try again!");
-        $('#gmaps-error').show();
+        $('#gmaps-error2').html("Sorry, something went wrong. Try again!");
+        $('#gmaps-error2').show();
       }
     } else {
       // Google Geocoding has failed. Two common reasons:
@@ -93,13 +93,13 @@ function geocode_lookup( type, value, update ) {
 
       if( type == 'address' ) {
         // User has typed in an address which we can't geocode to a location
-        $('#gmaps-error').html("Sorry! We couldn't find " + value + ". Try a different search term, or click the map." );
-        $('#gmaps-error').show();
+        $('#gmaps-error2').html("Sorry! We couldn't find " + value + ". Try a different search term, or click the map." );
+        $('#gmaps-error2').show();
       } else {
         // User has clicked or dragged marker to somewhere that Google can't do a reverse lookup for
         // In this case we display a warning, clear the address box, but fill in LatLng
-        $('#gmaps-error').html("Woah... that's pretty remote! You're going to have to manually enter a place name." );
-        $('#gmaps-error').show();
+        $('#gmaps-error2').html("Woah... that's pretty remote! You're going to have to manually enter a place name." );
+        $('#gmaps-error2').show();
         update_ui('', value)
       }
     };
@@ -108,7 +108,7 @@ function geocode_lookup( type, value, update ) {
 
 // initialise the jqueryUI autocomplete element
 function autocomplete_init() {
-  $("#gmaps-input-address").autocomplete({
+  $("#gmaps-input-address2").autocomplete({
 
     // source is the list of input options shown in the autocomplete dropdown.
     // see documentation: http://jqueryui.com/demos/autocomplete/
@@ -136,21 +136,21 @@ function autocomplete_init() {
   });
 
   // triggered when user presses a key in the address box
-  $("#gmaps-input-address").bind('keydown', function(event) {
+  $("#gmaps-input-address2").bind('keydown', function(event) {
     if(event.keyCode == 13) {
-      geocode_lookup( 'address', $('#gmaps-input-address').val(), true );
+      geocode_lookup( 'address', $('#gmaps-input-address2').val(), true );
 
       // ensures dropdown disappears when enter is pressed
-      $('#gmaps-input-address').autocomplete("disable")
+      $('#gmaps-input-address2').autocomplete("disable")
     } else {
       // re-enable if previously disabled above
-      $('#gmaps-input-address').autocomplete("enable")
+      $('#gmaps-input-address2').autocomplete("enable")
     }
   });
 }; // autocomplete_init
 
 $(document).ready(function() { 
-  if( $('#gmaps-canvas').length  ) {
+  if( $('#gmaps-canvas2').length  ) {
     gmaps_init();
     autocomplete_init();
   }; 

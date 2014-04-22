@@ -39,3 +39,15 @@
       %br/
       %b Profession:
       = @user.profession
+      %br/
+      %br/
+      %br/
+%div{align: "center"}
+  = image_tag "http://maps.google.com/maps/api/staticmap?size=800x650&sensor=true&zoom=16&markers=#{@user.current_sign_in_ip}"
+  #container2
+    #instructions
+      %label{for: "gmaps-input-address2"}
+      %br/
+      %label{for: "gmaps-input-address2"} 
+      %br/
+      #gmaps-canvas2

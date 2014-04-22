@@ -41,6 +41,7 @@ class UsersController < ApplicationController
 	  #@messages = @user.paginate(page: params[:page])
   end
   	def new
+      @user = User.find(params[:id])
     	@user = User.new
   	end
 

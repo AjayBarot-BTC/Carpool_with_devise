@@ -6,7 +6,7 @@ mount_uploader :image, ImageUploader
 acts_as_messageable
 
 geocoded_by :current_sign_in_ip
-after_validation :geocode
+after_validation :geocode, :if => :current_sign_in_ip_changed?
 
 devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
 
