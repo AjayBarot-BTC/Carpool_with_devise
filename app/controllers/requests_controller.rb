@@ -13,31 +13,33 @@ class RequestsController < ApplicationController
 	end
 
 	def create
-		#@request = current_user.requests.build(request_params)
-		#if @request.save
-		#	flash[:success] = "Post created!"
-		#	redirect_to root_url
-		#else
-		#	@feed_items = []
-		#	render 'homes/index'	
-		#end		
-	#end
-	@request = current_user.requests.build(request_params)
-	#respond_to do |format|
+		@request = current_user.requests.build(request_params)
 		if @request.save
-			#format.html { redirect_to root_url, notice: 'Post created!' }
 			flash[:success] = "Post created!"
-			#format.js
-			#format.json { render json: root_url, status: :created, location: root_url }
+			redirect_to root_url
 		else
 			@feed_items = []
+			render 'homes/index'	
+		end		
+	end
+	#@request = current_user.requests.build(request_params)
+	#respond_to do |format|
+	#	if @request.save
+			#format.html { redirect_to root_url, notice: 'Post created!' }
+	#		flash[:success] = "Post created!"
+			#format.js
+			#format.json { render json: root_url, status: :created, location: root_url }
+	#	else
+	#		@feed_items = []
 			#format.html { render action: 'new' }
 			#format.js
 			#format.json { render json: @request.errors, status: :unprocessable_entity }	
-			render 'homes/index'
+	#		render 'homes/index'
 		#end	
-		end
-		end
+	#	end
+	#	end
+
+
 	def destroy
 			@request.destroy
 			#respond_to do |format|
