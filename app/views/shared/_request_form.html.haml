@@ -5,22 +5,27 @@
   .hell
     #container
       #instructions
-        %label{for: "gmaps-input-address"} Destination:
+        %b
+          %label{for: "gmaps-input-address"} Destination:
         %br/
         = f.text_field :destination, placeholder: "Start typing a destination place  ...", type: "text", id: "gmaps-input-address"
-        %label{for: "gmaps-input-address"} Source:
+        %b
+          %label{for: "gmaps-input-address"} Source:
         %br/
         = f.text_field :source, placeholder: "Start typing a source place...", type: "text", id: "gmaps-input-address"
         #gmaps-error
         #gmaps-canvas
         %br/
-        %label{for: ""} Date of Trip:
+        %b
+          %label{for: ""} Date of Trip:
         %br/
         = f.text_field :date, 'data-behaviour' => 'datepicker', placeholder: "Enter Date"
-        %label{for: ""} Time of Trip:
+        %b
+          %label{for: ""} Time of Trip:
         %br/
         = f.text_field :time, placeholder: "Time"
-        %label{for: ""} Comment:
+        %b
+          %label{for: ""} Comment:
         %br/
         = f.text_area :content, placeholder: "Comment", align: "center"
         %br/

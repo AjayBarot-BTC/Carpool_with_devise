@@ -6,6 +6,9 @@ html {
 
 body {
   padding-top: 60px;
+  margin: 0;
+  background-image: url('Texture-Background-Gray-Yellow.jpg');
+  background-size: 1700px 2150px;
 }
 .btn-custom-darken.active {
   color: rgba(255, 255, 255, 0.75);
@@ -105,7 +108,7 @@ footer a {
 }
 
 footer a:hover {
-  color: #222;
+  color: $red;
 }
 
 footer small {
@@ -198,7 +201,7 @@ input {
   display: block;
 }
 .timestamp {
-  color: grey;
+  color: white;
 }
 
 .stats {
@@ -207,14 +210,14 @@ input {
     float: left;
     padding: 0 10px;
     border-left: 1px solid;
-    color: gray;
+    color: black;
     &:first-child {
       padding-left: 0;
       border: 0;
     }
     &:hover {
       text-decoration: none;
-      color: $blue;
+      color: $red;
     }
   }
   strong {
