@@ -21,4 +21,4 @@
   %span.timestamp
     Posted #{time_ago_in_words(feed_item.created_at)} ago.
     - if current_user == feed_item.user
-      = link_to "Delete", feed_item ,method: :delete, data: { confirm: "You sure?" }, title: "Delete"
+      = link_to "Delete", feed_item ,method: :delete, data: { confirm: "You sure?" }, title: "Delete", remote: true, class: "delete_post"

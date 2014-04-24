@@ -1,8 +1,8 @@
 = submit_tag "Hide Map. . . ", class: "hello"
 = submit_tag "Show Map. . . ", class: "hello2"
-= form_for(@request) do |f|
+= form_for(@request, remote: true) do |f|
+  = render 'shared/error_messages', object: f.object
   .hell
-    = render 'shared/error_messages', object: f.object
     #container
       #instructions
         %label{for: "gmaps-input-address"} Destination:
@@ -14,14 +14,14 @@
         #gmaps-error
         #gmaps-canvas
         %br/
-      %label{for: ""} Date of Trip:
-      %br/
-      = f.text_field :date, 'data-behaviour' => 'datepicker', placeholder: "Enter Date"
-      %label{for: ""} Time of Trip:
-      %br/
-      = f.text_field :time, placeholder: "Time"
-      %label{for: ""} Comment:
-      %br/
-      = f.text_area :content, placeholder: "Comment", align: "center"
-      %br/
-      = f.submit "Post", class: "btn btn-large btn-primary"
+        %label{for: ""} Date of Trip:
+        %br/
+        = f.text_field :date, 'data-behaviour' => 'datepicker', placeholder: "Enter Date"
+        %label{for: ""} Time of Trip:
+        %br/
+        = f.text_field :time, placeholder: "Time"
+        %label{for: ""} Comment:
+        %br/
+        = f.text_area :content, placeholder: "Comment", align: "center"
+        %br/
+        = f.submit "Post", class: "btn btn-large btn-primary"

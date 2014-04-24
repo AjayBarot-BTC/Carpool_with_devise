@@ -31,23 +31,29 @@ class RequestsController < ApplicationController
 			#format.json { render json: root_url, status: :created, location: root_url }
 		else
 			@feed_items = []
-			format.html {}
+			format.html { render action: 'new' }
 			format.js
-			#format.json { render json: @request.errors, status: :unprocessable_entity }
-			render 'homes/index'	
+			#format.json { render json: @request.errors, status: :unprocessable_entity }	
 		end	
 		end
 		end
-
 	def destroy
-		@request.destroy
-			#respond_to do |format|
-			flash[:success] = "Post deleted!"
-			#format.html { redirect_to root_url, notice: "Post deleted" }
-			#format.js { render nothing: true }
-			redirect_to root_url
-		#end
+			@request.destroy
+			respond_to do |format|
+			#flash[:success] = "Post deleted!"
+			format.html { redirect_to root_url, notice: "Post deleted" }
+			format.js { render nothing: true}
+			#redirect_to root_url
+		end
 	end
+	#def destroy
+  #  @post.destroy
+  #  respond_to do |format|
+  #    format.html { redirect_to posts_url }
+  #    #format.json { head :no_content }
+  #    format.js { render nothing: true}
+  #  end
+  #end
 
 	def show
 		@users = User.all
