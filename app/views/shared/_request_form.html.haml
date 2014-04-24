@@ -1,6 +1,6 @@
 = submit_tag "Hide Map. . . ", class: "hello"
 = submit_tag "Show Map. . . ", class: "hello2"
-= form_for(@request, remote: true) do |f|
+= form_for(@request) do |f|
   = render 'shared/error_messages', object: f.object
   .hell
     #container

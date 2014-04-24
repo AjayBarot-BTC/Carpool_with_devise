@@ -23,28 +23,29 @@ class RequestsController < ApplicationController
 		#end		
 	#end
 	@request = current_user.requests.build(request_params)
-	respond_to do |format|
+	#respond_to do |format|
 		if @request.save
-			format.html { redirect_to root_url, notice: 'Post created!' }
-			#flash[:success] = "Post created!"
-			format.js
+			#format.html { redirect_to root_url, notice: 'Post created!' }
+			flash[:success] = "Post created!"
+			#format.js
 			#format.json { render json: root_url, status: :created, location: root_url }
 		else
 			@feed_items = []
-			format.html { render action: 'new' }
-			format.js
+			#format.html { render action: 'new' }
+			#format.js
 			#format.json { render json: @request.errors, status: :unprocessable_entity }	
-		end	
+			render 'homes/index'
+		#end	
 		end
 		end
 	def destroy
 			@request.destroy
-			respond_to do |format|
-			#flash[:success] = "Post deleted!"
-			format.html { redirect_to root_url, notice: "Post deleted" }
-			format.js { render nothing: true}
-			#redirect_to root_url
-		end
+			#respond_to do |format|
+			flash[:success] = "Post deleted!"
+			#format.html { redirect_to root_url, notice: "Post deleted" }
+			#format.js { render nothing: true}
+			redirect_to root_url
+		#end
 	end
 	#def destroy
   #  @post.destroy
